@@ -9,7 +9,8 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
 - Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.\
 <br><br>
-**I - Filtres utilisés (ordre à respecter) :**  
+**I - Filtres utilisés (ordre à respecter) :**
+
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
 **1. ✅ Élimination de tous les nombres pairs (sauf 2) :**
@@ -79,7 +80,8 @@ Efficacité :
 - Pour tester un seul nombre, cela peut fonctionner jusqu’à 10¹², voire 10¹⁴ selon les cas.
 - Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.\
 <br><br>
-**II - Estimation des performances (1M à 10M) - Contexte :**
+**II - Estimation des performances (1M à 10M) - Contexte :
+
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
 Génération de tous les nombres premiers de 1 000 000 à 10 000 000 (soit 9 millions de nombres à tester) avec les filtres + crible dynamique sur un ordinateur standard (Intel i5, 4 à 8 Go de RAM).
@@ -104,6 +106,7 @@ Bonnes pratiques :
 - Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.\
 <br><br>
 **III - Remarque sur les filtres non utilisés (ex : 13, 17, 19, …) :**
+
 Ces filtres ne sont pas appliqués car ils n’apporteraient pas un gain de performance significatif.
 - Leurs règles sont plus complexes ou moins intuitives.
 - Leur fréquence de détection (multiples rencontrés) est relativement plus faible.
@@ -177,6 +180,7 @@ Exemple 3 – 110523
 - Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.\
 <br><br>
 **IV - TESTEZ SI UN NOMBRE EST PREMIER :**
+
 Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (***Main_Prime_Number_Test.java***) :
 Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, un filtre a été ajouté.
 
@@ -198,7 +202,6 @@ Exemple : n = 291167
 Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.\
 <br><br>
 **V - Mise en œuvre et utilisation – Voir les fichiers :**
-
 GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
 
 TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***
