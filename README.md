@@ -7,9 +7,8 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 
 **Méthode utilisée :  Forme 6n ± 1** 
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
-- Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
-\
-\
+- Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.\
+<br><br>
 **I - Filtres utilisés (ordre à respecter) :**  
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
@@ -78,9 +77,8 @@ Objectifs :
 Efficacité :
 - Rapide et efficace pour des entiers jusqu’à 10⁶ à 10⁷, voire jusqu’à ~10¹⁰ avec les filtres précédents.
 - Pour tester un seul nombre, cela peut fonctionner jusqu’à 10¹², voire 10¹⁴ selon les cas.
-- Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.
-  
-  
+- Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.\
+<br><br>
 **II - Estimation des performances (1M à 10M) - Contexte :**
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
@@ -103,9 +101,8 @@ Astuce d’optimisation Java avec multi-thread (CPU multicœurs), avec un proces
 Bonnes pratiques :
 - Utiliser des structures thread-safe pour collecter les résultats (ex : ConcurrentLinkedQueue, CopyOnWriteArrayList).
 - Fusionner les résultats des 8 threads à la fin pour obtenir la liste finale de nombres premiers.
-- Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.
-  
-  
+- Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.\
+<br><br>
 **III - Remarque sur les filtres non utilisés (ex : 13, 17, 19, …) :**
 Ces filtres ne sont pas appliqués car ils n’apporteraient pas un gain de performance significatif.
 - Leurs règles sont plus complexes ou moins intuitives.
@@ -176,11 +173,9 @@ Exemple 3 – 110523
 → 1×2 = 2 → 112 + 2 = 114  
 → 4×2 = 8 → 11 + 8 = 19 ⇒ divisible par 19 ✔️
 
-Conclusion :
 - Si le résultat = 19, 38, 57, … ⇒ divisible ✔️  
-- Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.
-  
-  
+- Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.\
+<br><br>
 **IV - TESTEZ SI UN NOMBRE EST PREMIER :**
 Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (***Main_Prime_Number_Test.java***) :
 Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, un filtre a été ajouté.
@@ -200,18 +195,16 @@ Exemple : n = 291167
   - (291167 + 1)/6 = 291168/6 = 48528 ✅
   → Le test est validé ⇒ n peut être premier ou faux positif.
 
-Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.
-  
-  
+Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.\
+<br><br>
 **V - Mise en œuvre et utilisation – Voir les fichiers :**
 
 GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
 
 TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***
-Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).
-  
-  
-**V - Information – Mathématique / informatique :**
+Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).\
+<br><br>
+**VI - Information – Mathématique / informatique :**
 Pour des tests massifs ou très grand (cryptographie), on utilise BigInteger :
 - Peut manipuler des entiers de taille arbitraire
 - Mais devient très lent avec BigInteger.sqrt() et des divisions répétées
