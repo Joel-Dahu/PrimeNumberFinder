@@ -9,9 +9,8 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 **Méthode utilisée :  Forme 6n ± 1** 
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
 - Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
-
 <br>&nbsp;<br>
-**I - Filtres utilisés (ordre à respecter) :**
+**I - FILTRES UTILISES (ordre à respecter) :**
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
 **1. ✅ Élimination de tous les nombres pairs (sauf 2) :**
@@ -80,9 +79,8 @@ Efficacité :
 - Rapide et efficace pour des entiers jusqu’à 10⁶ à 10⁷, voire jusqu’à ~10¹⁰ avec les filtres précédents.
 - Pour tester un seul nombre, cela peut fonctionner jusqu’à 10¹², voire 10¹⁴ selon les cas.
 - Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.
-
 <br>&nbsp;<br>
-**II - Estimation des performances (1M à 10M) - Contexte :**
+**II - ESTIMATION DES PERFORMANCES (1M à 10M) - Contexte :**
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
 Génération de tous les nombres premiers de 1 000 000 à 10 000 000 (soit 9 millions de nombres à tester) avec les filtres + crible dynamique sur un ordinateur standard (Intel i5, 4 à 8 Go de RAM).
@@ -104,9 +102,9 @@ Astuce d’optimisation Java avec multi-thread (CPU multicœurs), avec un proces
 Bonnes pratiques :
 - Utiliser des structures thread-safe pour collecter les résultats (ex : ConcurrentLinkedQueue, CopyOnWriteArrayList).
 - Fusionner les résultats des 8 threads à la fin pour obtenir la liste finale de nombres premiers.
-- Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.\
-<br><br>
-**III - Remarque sur les filtres non utilisés (ex : 13, 17, 19, …) :**
+- Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.
+<br>&nbsp;<br>
+**III - REMARQUE SUR LES FILTRES NON UTILISES (ex : 13, 17, 19, …) :**
 
 Ces filtres ne sont pas appliqués car ils n’apporteraient pas un gain de performance significatif.
 - Leurs règles sont plus complexes ou moins intuitives.
