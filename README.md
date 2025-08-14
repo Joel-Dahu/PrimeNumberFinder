@@ -1,6 +1,5 @@
-**GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**\
-<br>
-<br>
+**GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**
+<br>&nbsp;<br>
 Cette méthode ne propose rien de nouveau, elle s’appuie sur des principes bien connus (notamment les formes 6n - 1 et 6n + 1), associés à un système de filtrage permettant d’éliminer les faux positifs. Elle est organisée dans une optique d’optimisation du calcul.
 
 **Objectif :**
@@ -13,7 +12,6 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 <br>&nbsp;<br>
 
 **I - Filtres utilisés (ordre à respecter) :**
-
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
 **1. ✅ Élimination de tous les nombres pairs (sauf 2) :**
@@ -82,10 +80,10 @@ Efficacité :
 - Rapide et efficace pour des entiers jusqu’à 10⁶ à 10⁷, voire jusqu’à ~10¹⁰ avec les filtres précédents.
 - Pour tester un seul nombre, cela peut fonctionner jusqu’à 10¹², voire 10¹⁴ selon les cas.
 - Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.
-<br>
-<br>
-**II - Estimation des performances (1M à 10M) - Contexte :**
 
+<br>&nbsp;<br>
+
+**II - Estimation des performances (1M à 10M) - Contexte :**
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
 Génération de tous les nombres premiers de 1 000 000 à 10 000 000 (soit 9 millions de nombres à tester) avec les filtres + crible dynamique sur un ordinateur standard (Intel i5, 4 à 8 Go de RAM).
