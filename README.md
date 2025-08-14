@@ -106,7 +106,7 @@ Bonnes pratiques :
 - Fusionner les résultats des 8 threads à la fin pour obtenir la liste finale de nombres premiers.
 - Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.
 
-<br>&nbsp;<br>
+&nbsp;<br>
 **III - REMARQUE SUR LES FILTRES NON UTILISES (ex : 13, 17, 19, …) :**<br>
 Ces filtres ne sont pas appliqués car ils n’apporteraient pas un gain de performance significatif.
 - Leurs règles sont plus complexes ou moins intuitives.
@@ -178,7 +178,7 @@ Exemple 3 – 110523
 → 4×2 = 8 → 11 + 8 = 19 ⇒ divisible par 19 ✔️
 
 - Si le résultat = 19, 38, 57, … ⇒ divisible ✔️  
-- Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.\
+- Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.
 
 &nbsp;<br>
 **IV - TESTEZ SI UN NOMBRE EST PREMIER :**<br>
@@ -200,14 +200,14 @@ Exemple : n = 291167
   - (291167 + 1)/6 = 291168/6 = 48528 ✅
   → Le test est validé ⇒ n peut être premier ou faux positif.
 
-Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.\
+Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.
 
 &nbsp;<br>
 **V - MISE EN OEUVRE ET UTILISATION – Voir les fichiers :**<br>
 GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
 
 TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***
-Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).\
+Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).
 
 &nbsp;<br>
 **VI - INFORMATION – MATHEMATIQUE / INFORMATIQUE :**<br>
