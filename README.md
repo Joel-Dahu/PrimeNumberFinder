@@ -22,8 +22,8 @@ On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1,
 **2. ✅ Élimination des multiples de 3 (sauf 3) :**<br>
 Tout nombre dont la somme des chiffres est multiple de 3 (soit 3, 6, 9, 21, etc.) est lui-même divisible par 3, donc non premier.
 
-Exemple :  
-6921 → 6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible par 3, donc non premier ❌<br>
+Exemple : 6921<br>
+6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible par 3, donc non premier ❌<br>
 Remarque : Ce filtre s’applique quel que soit le nombre de chiffres.
 
 **3 ✅ Élimination des multiples de 5 (sauf 5) :**<br>
@@ -53,7 +53,7 @@ Exemple : 49
 → 4 - 18 = -14 → également divisible par 7 ✔️
 
 Autre exemple : 217
-- Dernier chiffre = 7 → 7 × 2 = 14 
+- Dernier chiffre = 7 → 7 × 2 = 14<br>
 → 21 - 14 = 7 → également divisible par 7 ✔️
 
 **5. ✅ Élimination des multiples de 11 (sauf 11 lui-même) :**<br>
@@ -124,7 +124,8 @@ Ils sont donc inutiles à appliquer en amont, car leur ajout :
 4. Répéter jusqu’à obtenir un multiple évident de 13 (13, 26, 39, …).
 
 Exemples :<br>
-Avec 143 : 3×4 = 12 → 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
+Avec 143 : 3×4 = 12<br>
+→ 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
 
 Avec 2197 : 7×4 = 28 → 219 + 28 = 247<br>
 → 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 ou 13× 4), alors 2197 est divisible par 13 ✔️<br>
