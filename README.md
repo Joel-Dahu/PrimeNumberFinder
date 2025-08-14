@@ -1,6 +1,6 @@
 **GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**
-\
-\
+  \
+  \
 Cette méthode ne propose rien de nouveau, elle s’appuie sur des principes bien connus (notamment les formes 6n - 1 et 6n + 1), associés à un système de filtrage permettant d’éliminer les faux positifs. Elle est organisée dans une optique d’optimisation du calcul.
 
 **Objectif :**
@@ -183,7 +183,7 @@ Conclusion :
   
   
 **IV - TESTEZ SI UN NOMBRE EST PREMIER :**
-Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (Main_Prime_Number_Test.java) :
+Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (***Main_Prime_Number_Test.java***) :
 Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, un filtre a été ajouté.
 
 ✅ **Filtre de forme pour test direct (n±1)/6 :**
@@ -206,9 +206,9 @@ Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux posi
   
 **V - Mise en œuvre et utilisation – Voir les fichiers :**
 
-GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : *Main_List_Of_Prime_Number.java*
+GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
 
-TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : *Main_Prime_Number_Test.java*
+TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***
 Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).
   
   
