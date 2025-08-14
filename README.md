@@ -124,8 +124,7 @@ Ils sont donc inutiles à appliquer en amont, car leur ajout :
 4. Répéter jusqu’à obtenir un multiple évident de 13 (13, 26, 39, …).
 
 Exemples :<br>
-Avec 143 : 3×4 = 12<br>
-→ 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
+Avec 143 : 3×4 = 12 → 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
 
 Avec 2197 : 7×4 = 28 → 219 + 28 = 247<br>
 → 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 ou 13× 4), alors 2197 est divisible par 13 ✔️<br>
@@ -166,14 +165,14 @@ Conclusion :
 4. Répéter jusqu’à obtenir un nombre facile à tester.
 Si le résultat est un multiple de 19 (19, 38, 57, …), alors le nombre initial est divisible par 19.
 
-Exemple 1 - 133 : <br>  
+Exemple 1 - 133 :<br>
 → 3×2 = 6 → 13 + 6 = 19 ⇒ divisible par 19 ✔️
 
-Exemple 2 - 361 : <br>  
+Exemple 2 - 361 :<br>
 → 1×2 = 2 → 36 + 2 = 38 ⇒ divisible par 19 ✔️  
 → 8×2 = 16 → 3 + 16 = 19 ⇒ divisible par 19 ✔️
 
-Exemple 3 – 110523 : <br> 
+Exemple 3 – 110523 :<br>
 → 3×2 = 6 → 11052 + 6 = 11058  
 → 8×2 = 16 → 1105 + 16 = 1121  
 → 1×2 = 2 → 112 + 2 = 114  
