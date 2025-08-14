@@ -179,9 +179,9 @@ Exemple 3 – 110523
 
 - Si le résultat = 19, 38, 57, … ⇒ divisible ✔️  
 - Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.\
-<br><br>
-**IV - TESTEZ SI UN NOMBRE EST PREMIER :**
 
+&nbsp;<br>
+**IV - TESTEZ SI UN NOMBRE EST PREMIER :**
 Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (***Main_Prime_Number_Test.java***) :
 Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, un filtre a été ajouté.
 
@@ -201,14 +201,16 @@ Exemple : n = 291167
   → Le test est validé ⇒ n peut être premier ou faux positif.
 
 Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.\
-<br><br>
-**V - Mise en œuvre et utilisation – Voir les fichiers :**
+
+&nbsp;<br>
+**V - MISE EN OEUVRE ET UTILISATION – Voir les fichiers :**
 GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
 
 TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***
 Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).\
-<br><br>
-**VI - Information – Mathématique / informatique :**
+
+&nbsp;<br>
+**VI - INFORMATION – MATHEMATIQUE / INFORMATIQUE :**
 Pour des tests massifs ou très grand (cryptographie), on utilise BigInteger :
 - Peut manipuler des entiers de taille arbitraire
 - Mais devient très lent avec BigInteger.sqrt() et des divisions répétées
