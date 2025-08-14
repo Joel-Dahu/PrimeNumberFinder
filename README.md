@@ -15,7 +15,7 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
 **1. ✅ Élimination de tous les nombres pairs (sauf 2) :**<br>
-Tous les nombres se terminant par 0, 2, 4, 6, 8 sont pairs, donc non premiers, sauf le 2 lui-même.  Cela concerne tous les multiples de 2 : 4, 6, 8, 10, 12, 14, etc.
+Tous les nombres se terminant par 0, 2, 4, 6, 8 sont pairs, donc non premiers, sauf le 2 lui-même.  Cela concerne tous les multiples de 2 : 4, 6, 8, 10, 12, 14, etc.<br>
 Observation :  
 On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1, 3, 5, 7, 9.
 
@@ -23,11 +23,11 @@ On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1,
 Tout nombre dont la somme des chiffres est multiple de 3 (soit 3, 6, 9, 21, etc.) est lui-même divisible par 3, donc non premier.
 
 Exemple :  
-6921 → 6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible par 3, donc non premier ❌
+6921 → 6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible par 3, donc non premier ❌<br>
 Remarque : Ce filtre s’applique quel que soit le nombre de chiffres.
 
 **3 ✅ Élimination des multiples de 5 (sauf 5) :**<br>
-Tous les nombres se terminant par 5 ou 0, à partir de 10, sont des multiples de 5 et donc non premiers, à l’exception du 5 lui-même.
+Tous les nombres se terminant par 5 ou 0, à partir de 10, sont des multiples de 5 et donc non premiers, à l’exception du 5 lui-même.<br>
 Observation : On conserve les impairs restants se terminant par : 1, 3, 7, 9, etc.
 
 **4. ✅ Élimination des multiples de 7 (sauf 7 lui-même) :**<br>
@@ -65,7 +65,7 @@ Exemple : 209
 Exemple : 1694  
 → 1 - 6 + 9 - 4 = 0 → ✔️ divisible par 11
 
-Exemple : 49709  
+Exemple : 49709
 → 4 - 9 + 7 - 0 + 9 = 11 → ✔️ divisible par 11
   
 **6. ✅ Crible dynamique avec diviseurs ≤ √n (≥ 13) :**<br>
@@ -123,13 +123,14 @@ Ils sont donc inutiles à appliquer en amont, car leur ajout :
 3. L’ajouter au reste du nombre (sans le dernier chiffre).
 4. Répéter jusqu’à obtenir un multiple évident de 13 (13, 26, 39, …).
 
-Exemples :
-Avec 143 → 3×4 = 12 → 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
-Avec 2197 → 7×4 = 28 → 219 + 28 = 247<br>
+Exemples :<br>
+Avec 143 : 3×4 = 12 → 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
+
+Avec 2197 : 7×4 = 28 → 219 + 28 = 247<br>
 → 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 ou 13× 4), alors 2197 est divisible par 13 ✔️<br>
 → 2×4= 8 → 5 + 8 = 13 ⇒ (13 = 13 × 1), alors 2197 est divisible par 13 ✔️
 
-Exemple avec 7007 → 7×4 = 28 → 700 + 28 = 728  
+Avec 7007 : 7×4 = 28 → 700 + 28 = 728  
 → 8×4 = 32 → 72 + 32 = 104  
 → 4×4 = 16 → 10 + 16 = 26 ⇒ (26 = 13 × 2), alors 7007 est divisible par 13 ✔️
 
@@ -143,12 +144,12 @@ Deux cas de succès :
 - Si le résultat final est 0 (méthode 1), le nombre est divisible par 17. ✔️  
 - Si le résultat atteint ±17, ±34, ±51, …, (méthode 2), le nombre est aussi divisible par 17. ✔️
 
-Méthode 1 – Exemple avec 21063  
+Méthode 1 – Avec 21063 :<br> 
 → 3×5 = 15 → 2106 − 15 = 2091  
 → 1×5 = 5 → 209 − 5 = 204  
 → 4×5 = 20 → 20 − 20 = 0 ⇒ divisible par 17 ✔️
 
-Méthode 2 – Exemple avec 21199  
+Méthode 2 – Avec 21199 : <br>
 → 9×5 = 45 → 2119 − 45 = 2074  
 → 4×5 = 20 → 207 − 20 = 187  
 → 7×5 = 35 → 18 − 35 = −17 ⇒ Reste ≠ 0, mais -17 (17 x -1) est divisible par 17 ✔️
@@ -164,14 +165,14 @@ Conclusion :
 4. Répéter jusqu’à obtenir un nombre facile à tester.
 Si le résultat est un multiple de 19 (19, 38, 57, …), alors le nombre initial est divisible par 19.
 
-Exemple 1 : 133  
+Exemple 1 - 133 : <br>  
 → 3×2 = 6 → 13 + 6 = 19 ⇒ divisible par 19 ✔️
 
-Exemple 2 : 361  
+Exemple 2 - 361 : <br>  
 → 1×2 = 2 → 36 + 2 = 38 ⇒ divisible par 19 ✔️  
 → 8×2 = 16 → 3 + 16 = 19 ⇒ divisible par 19 ✔️
 
-Exemple 3 – 110523  
+Exemple 3 – 110523 : <br> 
 → 3×2 = 6 → 11052 + 6 = 11058  
 → 8×2 = 16 → 1105 + 16 = 1121  
 → 1×2 = 2 → 112 + 2 = 114  
