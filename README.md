@@ -9,8 +9,7 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 **Méthode utilisée :  Forme 6n ± 1** 
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
 - Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
-<br>
-<br>\
+\r\n
 **I - Filtres utilisés (ordre à respecter) :**
 
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
