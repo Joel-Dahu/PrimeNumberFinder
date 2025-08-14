@@ -1,37 +1,37 @@
-*GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS*
+**GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**
 
 Cette méthode ne propose rien de nouveau, elle s’appuie sur des principes bien connus (notamment les formes 6n - 1 et 6n + 1), associés à un système de filtrage permettant d’éliminer les faux positifs. Elle est organisée dans une optique d’optimisation du calcul.
-
-
-*Objectif :*
+  
+  
+**Objectif :**
 Dresser une liste de nombres premiers à partir d’un nombre quelconque supérieur à 2, en filtrant les faux positifs. Il s’agit d’une méthode structurée, simple et optimisée, qui permet d’identifier les nombres premiers avec une fiabilité de 100 %, à condition de suivre rigoureusement toutes les étapes.
-
-
-*Méthode utilisée :  Forme 6n ± 1* 
+  
+  
+**Méthode utilisée :  Forme 6n ± 1** 
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
 - Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
-
-
-*I - Filtres utilisés (ordre à respecter) :*  
+  
+  
+**I - Filtres utilisés (ordre à respecter) :**  
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
-*1. ✅ Élimination de tous les nombres pairs (sauf 2) :*
+**1. ✅ Élimination de tous les nombres pairs (sauf 2) :**
 Tous les nombres se terminant par 0, 2, 4, 6, 8 sont pairs, donc non premiers, sauf le 2 lui-même.  Cela concerne tous les multiples de 2 : 4, 6, 8, 10, 12, 14, etc.
 Observation :  
 On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1, 3, 5, 7, 9.
 
-*2. ✅ Élimination des multiples de 3 (sauf 3) :*
+**2. ✅ Élimination des multiples de 3 (sauf 3) :**
 Tout nombre dont la somme des chiffres est multiple de 3 (soit 3, 6, 9, 21, etc.) est lui-même divisible par 3, donc non premier.
 
 Exemple :  
 6921 → 6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible par 3, donc non premier ❌
 Remarque : Ce filtre s’applique quel que soit le nombre de chiffres.
 
-*3 ✅ Élimination des multiples de 5 (sauf 5) :*
+**3 ✅ Élimination des multiples de 5 (sauf 5) :**
 Tous les nombres se terminant par 5 ou 0, à partir de 10, sont des multiples de 5 et donc non premiers, à l’exception du 5 lui-même.
 Observation : On conserve les impairs restants se terminant par : 1, 3, 7, 9, etc.
 
-*4. ✅ Élimination des multiples de 7 (sauf 7 lui-même) :*
+**4. ✅ Élimination des multiples de 7 (sauf 7 lui-même) :**
 Méthode soustractive par 2 :
 
 Étapes :  
@@ -57,7 +57,7 @@ Autre exemple : 217
 - Dernier chiffre = 7 → 7 × 2 = 14 
 → 21 - 14 = 7 → également divisible par 7 ✔️
 
-*5. ✅ Élimination des multiples de 11 (sauf 11 lui-même) :*
+**5. ✅ Élimination des multiples de 11 (sauf 11 lui-même) :**
 Méthode : somme alternée des chiffres (signes - et +). Un nombre est divisible par 11 si la somme alternée de ses chiffres, en appliquant alternativement - et +, donne un résultat égal à 0 ou à un multiple de 11 (positif ou négatif). Il faut toujours commencer par le signe négatif de gauche à droite. Cette règle permet d’identifier rapidement si un nombre est divisible par 11, sans division.
 
 Exemple : 209  
@@ -68,8 +68,8 @@ Exemple : 1694
 
 Exemple : 49709  
 → 4 - 9 + 7 - 0 + 9 = 11 → ✔️ divisible par 11
-
-*6. ✅ Crible dynamique avec diviseurs ≤ √n (≥ 13) :*
+  
+**6. ✅ Crible dynamique avec diviseurs ≤ √n (≥ 13) :**
 Après les filtres précédents (2, 3, 5, 7, 11), on applique un crible dynamique en testant la divisibilité du nombre par les petits nombres premiers ≥ 13, jusqu’à √n.
 Ce n’est pas un crible d’Ératosthène ni un test probabiliste, mais une méthode de division d’essai optimisée, simple et fiable pour des nombres de taille modérée.
 
@@ -81,9 +81,9 @@ Efficacité :
 - Rapide et efficace pour des entiers jusqu’à 10⁶ à 10⁷, voire jusqu’à ~10¹⁰ avec les filtres précédents.
 - Pour tester un seul nombre, cela peut fonctionner jusqu’à 10¹², voire 10¹⁴ selon les cas.
 - Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.
-
-
-*II - Estimation des performances (1M à 10M) - Contexte :*
+  
+  
+**II - Estimation des performances (1M à 10M) - Contexte :**
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
 Génération de tous les nombres premiers de 1 000 000 à 10 000 000 (soit 9 millions de nombres à tester) avec les filtres + crible dynamique sur un ordinateur standard (Intel i5, 4 à 8 Go de RAM).
@@ -106,9 +106,9 @@ Bonnes pratiques :
 - Utiliser des structures thread-safe pour collecter les résultats (ex : ConcurrentLinkedQueue, CopyOnWriteArrayList).
 - Fusionner les résultats des 8 threads à la fin pour obtenir la liste finale de nombres premiers.
 - Bien gérer la synchronisation et éviter les blocages (deadlocks) ou surcharge CPU.
-
-
-*III - Remarque sur les filtres non utilisés (ex : 13, 17, 19, …) :*
+  
+  
+**III - Remarque sur les filtres non utilisés (ex : 13, 17, 19, …) :**
 Ces filtres ne sont pas appliqués car ils n’apporteraient pas un gain de performance significatif.
 - Leurs règles sont plus complexes ou moins intuitives.
 - Leur fréquence de détection (multiples rencontrés) est relativement plus faible.
@@ -118,7 +118,7 @@ Ils sont donc inutiles à appliquer en amont, car leur ajout :
 - Ne réduit pas suffisamment la charge de calcul,
 - Et ajoute une surcharge inutile au traitement.
 
-➤ *Filtre des multiples de 13 (×4 + reste) - Méthode :*
+➤ **Filtre des multiples de 13 (×4 + reste) - Méthode :**
 1. Prendre le dernier chiffre du nombre.
 2. Le multiplier par 4.
 3. L’ajouter au reste du nombre (sans le dernier chiffre).
@@ -134,7 +134,7 @@ Exemple avec 7007 → 7×4 = 28 → 700 + 28 = 728
 → 8×4 = 32 → 72 + 32 = 104  
 → 4×4 = 16 → 10 + 16 = 26 ⇒ (26 = 13 × 2), alors 7007 est divisible par 13 ✔️
 
-➤ *Multiple de 17 (×5, méthode soustractive) - Principe :*
+➤ **Multiple de 17 (×5, méthode soustractive) - Principe :**
 1. Prendre le dernier chiffre du nombre.  
 2. Le multiplier par 5.  
 3. Soustraire ce résultat au reste du nombre (sans le dernier chiffre).  
@@ -158,7 +158,7 @@ Conclusion :
 - Résultat final = 0 → divisible par 17 ✔️  
 - Résultat final = ±17, ±34, … → divisible par 17 ✔️
 
-➤ *Multiple de 19 (×2, méthode additive) - Principe :*
+➤ **Multiple de 19 (×2, méthode additive) - Principe :**
 1. Prendre le dernier chiffre du nombre.  
 2. Le multiplier par 2.  
 3. Ajouter ce résultat au reste du nombre (sans le dernier chiffre).  
@@ -181,13 +181,13 @@ Exemple 3 – 110523
 Conclusion :
 - Si le résultat = 19, 38, 57, … ⇒ divisible ✔️  
 - Cette méthode est rapide et fiable pour des vérifications manuelles ou algorithmiques.
-
-
-*IV - TESTEZ SI UN NOMBRE EST PREMIER :*
+  
+  
+**IV - TESTEZ SI UN NOMBRE EST PREMIER :**
 Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (Main_Prime_Number_Test.java) :
 Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, un filtre a été ajouté.
 
-✅ *Filtre de forme pour test direct (n±1)/6 :*
+✅ **Filtre de forme pour test direct (n±1)/6 :**
 Utilisation : Uniquement dans les tests de primalité d’un nombre.
 Principe : Tout nombre premier > 3 est de la forme 6k ± 1.
 Méthode, pour un entier n > 3, on vérifie :
@@ -203,17 +203,17 @@ Exemple : n = 291167
   → Le test est validé ⇒ n peut être premier ou faux positif.
 
 Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.
+  
+  
+**V - Mise en œuvre et utilisation – Voir les fichiers :**
 
+GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : *Main_List_Of_Prime_Number.java*
 
-*V - Mise en œuvre et utilisation – Voir les fichiers :*
-
-GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : Main_List_Of_Prime_Number.java
-
-TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : Main_Prime_Number_Test.java
+TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : *Main_Prime_Number_Test.java*
 Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).
-
-
-*V - Information – Mathématique / informatique :*
+  
+  
+**V - Information – Mathématique / informatique :**
 Pour des tests massifs ou très grand (cryptographie), on utilise BigInteger :
 - Peut manipuler des entiers de taille arbitraire
 - Mais devient très lent avec BigInteger.sqrt() et des divisions répétées
