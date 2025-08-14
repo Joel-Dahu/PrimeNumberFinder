@@ -1,5 +1,6 @@
-**GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**\
-<br><br>
+**GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**
+<br>
+<br>
 Cette méthode ne propose rien de nouveau, elle s’appuie sur des principes bien connus (notamment les formes 6n - 1 et 6n + 1), associés à un système de filtrage permettant d’éliminer les faux positifs. Elle est organisée dans une optique d’optimisation du calcul.
 
 **Objectif :**
@@ -7,8 +8,9 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 
 **Méthode utilisée :  Forme 6n ± 1** 
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
-- Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.\
-<br><br>
+- Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
+<br>
+<br>
 **I - Filtres utilisés (ordre à respecter) :**
 
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
