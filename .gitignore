@@ -1,0 +1,56 @@
+Compiled class files
+*.class
+
+Log files
+*.log
+
+BlueJ files
+*.ctxt
+
+Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+Package Files #
+*.jar
+*.war
+*.ear
+
+Eclipse files
+.settings/
+.project
+.classpath
+
+NetBeans files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+IntelliJ IDEA files
+*.iml
+.idea/
+out/
+
+VS Code files
+.vscode/
+
+Mac OS
+.DS_Store
+
+Windows
+Thumbs.db
+
+Build output
+/bin/
+/target/
+
+Maven
+/logs/
+*.tmp
+*.bak
+*.swp
+
+Generated files
+gen/

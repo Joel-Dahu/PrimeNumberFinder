@@ -1,0 +1,120 @@
+-------------------------------------------------------------
+Works on Java 8+
+-------------------------------------------------------------
+Title: Optimized Prime Number Generation Using 6n ± 1 and Progressive Filtering
+
+---
+Summary:  
+This method does not invent anything, but builds upon well-known principles (6n±1) combined with a filtering system to eliminate false positives. The structure emphasizes clarity, efficiency, and optimization in generating prime numbers.
+
+---
+Objective: 
+To generate a list of prime numbers (for any range > 2) or verify if a given number is prime, using a step-by-step filtering system.  
+✔ No missed primes  
+✔ No false positives  
+✔ Valid for all ranges (infinite)
+
+---
+Base Principle: 6n ± 1  
+All prime numbers > 3 are of the form 6n - 1 or 6n + 1.  
+This method uses this rule as a base, then filters out all false positives.
+
+---
+Filters (in order):
+
+1. ✅ Even Numbers: Remove all numbers ending in 0, 2, 4, 6, 8 (except 2).  
+2. ✅ Multiples of 3: Remove numbers where the sum of digits is 3, 6, or 9 (except 3). 
+3. ✅ Ending in 5: Remove all numbers ending in 5 (except 5).
+4. ✅ Multiples of 7: Use the ×2 subtraction method.  
+5. ✅ Multiples of 11: Use the alternating digit sum method.
+6. ✅ Dynamic Crible: Check divisibility only by known primes ≤ √n (excluding: 2, 3, 5, 7, 11 as they’re already filtered). Start with 13, 17, 19...
+
+---
+Performance Notes:  
+- Filters like for 13, 17, 19, etc. are not used because they offer low gain vs. cost.  
+- They are effectively handled by the final dynamic check.  
+- Combining filters 7 and 11 offers high optimization due to frequency and simplicity.
+
+---
+Use Cases.
+1. Generate prime numbers from n_start to n_stop.
+Apply:
+n_test = n × 6 - 1  
+n_test = n × 6 + 1
+
+On each, apply the filters in order. If none of them reject the number → it's a prime.
+
+2. Test if a number is prime:
+Run the number through the filters above. If it passes all → it's prime.
+
+---
+Advantages:
+- Clean logic  
+- Structured filters  
+- High efficiency  
+- No division in early stages  
+- Early rejection of obvious composites  
+- Works for small and large numbers  
+- Easy to implement in any programming language
+
+---
+Example – Expected result:
+Input: n from 3 to 17
+Result: 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103
+False positives such as 35, 49, 77, 85, 91, 95, 119, etc. are eliminated by the filters.
+
+---
+License:
+This project is licensed under the MIT License – See the 'LICENSE' file for more information.
+
+-------------------------------------------------------------
+Fonctionne sur Java 8+
+-------------------------------------------------------------
+README – Méthode optimisée de génération de nombres premiers
+
+---
+Objectif :  
+Dresser une liste complète des nombres premiers ou tester si un nombre est premier, à partir d’une approche connue (6n ± 1) combinée à une série de filtres progressifs optimisés pour éliminer les faux positifs sans division lourde, suivie d’une vérification finale dynamique.
+
+---
+Principe mathématique :
+Tout nombre premier strictement supérieur à 3 est nécessairement de la forme :  
+6n - 1 ou 6n + 1.
+
+---
+Étapes de la méthode.
+1. Génération brute :
+Pour chaque entier n ≥ 1, générer deux candidats :
+n_test = n × 6 - 1  
+n_test = n × 6 + 1
+
+2. Filtres rapides (dans cet ordre) :
+Ces filtres éliminent directement de nombreux faux positifs :
+
+1. ✅ Pairs : éliminer tout nombre finissant par 0, 2, 4, 6, 8 (sauf 2).
+2. ✅ Multiples de 3 : somme des chiffres = 3, 6 ou 9 (sauf 3).
+3. ✅ Multiples de 5 : éliminer tout nombre finissant par 5 (sauf 5).
+4. ✅ Multiples de 7 : test soustractif (×2).
+5. ✅ Multiples de 11 : somme alternée des chiffres.
+6. ✅ Crible dynamique : test de divisibilité ≤ √n avec des petits nombres premiers ≥ 13 (sauf : 2, 3, 5, 7, 11 sont déjà filtrés).
+
+---
+Exemple – Résultat attendu :
+Entrée : n de 3 à 17
+Résultat : 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103
+
+Les faux positifs comme 35, 49, 77, 85, 91, 95, 119… sont éliminés par les filtres.
+
+---
+Application pratique :
+
+- ✅ Génération de liste de nombres premiers.
+- ✅ Test rapide de primalité pour un entier.
+- ✅ Aucun nombre premier manqué.
+- ✅ Aucun faux positif.
+
+---
+Licence :
+Ce projet est sous licence MIT – Voir le fichier 'LICENSE' pour plus d'informations.
+
+--------------------------------------------------------------------
