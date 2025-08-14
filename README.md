@@ -124,9 +124,9 @@ Ils sont donc inutiles à appliquer en amont, car leur ajout :
 4. Répéter jusqu’à obtenir un multiple évident de 13 (13, 26, 39, …).
 
 Exemples :
-Avec 143 → 3×4 = 12 → 14 + 12 = 26 ⇒ divisible par 13 ✔️
-Avec 2197 → 7×4 = 28 → 219 + 28 = 247  
-→ 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 ou 13× 4), alors 2197 est divisible par 13 ✔️
+Avec 143 → 3×4 = 12 → 14 + 12 = 26 ⇒ divisible par 13 ✔️<br>
+Avec 2197 → 7×4 = 28 → 219 + 28 = 247<br>
+→ 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 ou 13× 4), alors 2197 est divisible par 13 ✔️<br>
 → 2×4= 8 → 5 + 8 = 13 ⇒ (13 = 13 × 1), alors 2197 est divisible par 13 ✔️
 
 Exemple avec 7007 → 7×4 = 28 → 700 + 28 = 728  
