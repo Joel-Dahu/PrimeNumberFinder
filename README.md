@@ -1,4 +1,5 @@
 **GENERER UNE LISTE DE NOMBRES PREMIERS ET ELIMINATION DES FAUX POSITIFS**
+
 <br>&nbsp;<br>
 Cette méthode ne propose rien de nouveau, elle s’appuie sur des principes bien connus (notamment les formes 6n - 1 et 6n + 1), associés à un système de filtrage permettant d’éliminer les faux positifs. Elle est organisée dans une optique d’optimisation du calcul.
 
@@ -10,7 +11,6 @@ Dresser une liste de nombres premiers à partir d’un nombre quelconque supéri
 - Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
 
 <br>&nbsp;<br>
-
 **I - Filtres utilisés (ordre à respecter) :**
 Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les faux positifs, dans un objectif d’optimisation des opérations (gain de temps).
 
@@ -82,7 +82,6 @@ Efficacité :
 - Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.
 
 <br>&nbsp;<br>
-
 **II - Estimation des performances (1M à 10M) - Contexte :**
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
