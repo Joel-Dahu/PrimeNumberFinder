@@ -82,9 +82,7 @@ Efficacité :
 **II - ESTIMATION DES PERFORMANCES (1M à 10M) - Contexte :**<br>
 En code JAVA : Le type long permet de stocker des entiers de : -9 223 372 036 854 775 808 à +9 223 372 036 854 775 807 (soit environ ±9.2 × 10¹⁸). Le crible dynamique fonctionne avec long jusqu’à 9 × 10¹⁸, mais le temps de calcul augmente fortement au-delà de 10⁹ à 10¹²
 
-Génération de tous les nombres premiers de 1 000 000 à 10 000 000 (soit 9 millions de nombres à tester) avec les filtres + crible dynamique sur un ordinateur standard (Intel i5, 4 à 8 Go de RAM).
-
-Étapes :  
+Génération de tous les nombres premiers de 1 000 000 à 10 000 000 (soit 9 millions de nombres à tester) avec les filtres + crible dynamique sur un ordinateur standard (Intel i5, 4 à 8 Go de RAM). Étapes :  
 - Filtres rapides (pair, %3, %5, %7, %11) → Éliminent environ 90 % des nombres très rapidement.
 - Crible dynamique (division ≤ √n) → Appliqué uniquement aux ~10 % restants, soit ~900 000 cas.
 
