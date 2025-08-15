@@ -16,8 +16,7 @@ Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les fa
 
 **1. ✅ Élimination de tous les nombres pairs (sauf 2) :**<br>
 Tous les nombres se terminant par 0, 2, 4, 6, 8 sont pairs, donc non premiers, sauf le 2 lui-même.  Cela concerne tous les multiples de 2 : 4, 6, 8, 10, 12, 14, etc.<br>
-Observation :<br<
-On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1, 3, 5, 7, 9.
+Observation : On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1, 3, 5, 7, 9.
 
 **2. ✅ Élimination des multiples de 3 (sauf 3) :**<br>
 Tout nombre dont la somme des chiffres est multiple de 3 (soit 3, 6, 9, 21, etc.) est lui-même divisible par 3, donc non premier.
@@ -28,12 +27,10 @@ Remarque : Ce filtre s’applique quel que soit le nombre de chiffres.
 
 **3 ✅ Élimination des multiples de 5 (sauf 5) :**<br>
 Tous les nombres se terminant par 5 ou 0, à partir de 10, sont des multiples de 5 et donc non premiers, à l’exception du 5 lui-même.<br>
-Observation : On conserve les impairs restants se terminant par : 1, 3, 7, 9, etc.
+Observation : On conserve les impairs restants se terminant par : 1, 3, 7, 9, sauf 5.
 
 **4. ✅ Élimination des multiples de 7 (sauf 7 lui-même) :**<br>
-Méthode soustractive par 2 :
-
-Étapes :  
+Méthode soustractive par 2, les étapes :  
 1. Prendre le dernier chiffre du nombre (chiffre des unités).  
 2. Le multiplier par 2.  
 3. Soustraire ce résultat au reste du nombre (sans le dernier chiffre).  
