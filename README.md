@@ -1,5 +1,4 @@
 **GENERATE A LIST OF PRIME NUMBERS AND ELIMINATE FALSE POSITIVES**
-
 &nbsp;<br>  
 This method introduces nothing new; it relies on well-known principles (notably the 6n - 1 and 6n + 1 forms), combined with a filtering system to eliminate false positives. It is structured with a focus on calculation optimization.
 
