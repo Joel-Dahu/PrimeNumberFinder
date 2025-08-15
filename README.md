@@ -16,7 +16,7 @@ Basé sur un filtrage progressif de l’ensemble des entiers pour exclure les fa
 
 **1. ✅ Élimination de tous les nombres pairs (sauf 2) :**<br>
 Tous les nombres se terminant par 0, 2, 4, 6, 8 sont pairs, donc non premiers, sauf le 2 lui-même.  Cela concerne tous les multiples de 2 : 4, 6, 8, 10, 12, 14, etc.<br>
-Observation :  
+Observation :<br<
 On ne conserve que les nombres impairs, c’est-à-dire ceux se terminant par 1, 3, 5, 7, 9.
 
 **2. ✅ Élimination des multiples de 3 (sauf 3) :**<br>
