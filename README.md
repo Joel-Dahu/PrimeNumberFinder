@@ -37,7 +37,7 @@ Méthode soustractive par 2, les étapes :
 4. Répéter les étapes avec le nouveau nombre obtenu.  
 5. Si le résultat final est un multiple de 7 (0, 7, 14, 21, etc. ou leurs opposés négatifs : -7, -14...), alors le nombre d’origine est divisible par 7.
 
-Exemple : 69097  
+Exemple : 69097<br> 
 → Dernier chiffre = 7 → 7 × 2 = 14  
 → 6909 - 14 = 6895  
 → Dernier chiffre = 5 → 5 × 2 = 10  
@@ -45,24 +45,24 @@ Exemple : 69097
 → Dernier chiffre = 9 → 9 × 2 = 18  
 → 67 - 18 = 49 ✅  est un multiple de 7 (7 × 7), donc 69097 est divisible par 7 ✔️
 
-Exemple : 49
+Exemple : 49<br>
 → Dernier chiffre = 9 → 9 × 2 = 18  
 → 4 - 18 = -14 → également divisible par 7 ✔️
 
-Autre exemple : 217
+Autre exemple : 217<br>
 → Dernier chiffre = 7 → 7 × 2 = 14<br>
 → 21 - 14 = 7 → également divisible par 7 ✔️
 
 **5. ✅ Élimination des multiples de 11 (sauf 11 lui-même) :**<br>
 Méthode : somme alternée des chiffres (signes - et +). Un nombre est divisible par 11 si la somme alternée de ses chiffres, en appliquant alternativement - et +, donne un résultat égal à 0 ou à un multiple de 11 (positif ou négatif). Il faut toujours commencer par le signe négatif de gauche à droite. Cette règle permet d’identifier rapidement si un nombre est divisible par 11, sans division.
 
-Exemple : 209  
+Exemple : 209<br> 
 → 2 - 0 + 9 = 11 → ✔️ divisible par 11
 
-Exemple : 1694  
+Exemple : 1694<br>
 → 1 - 6 + 9 - 4 = 0 → ✔️ divisible par 11
 
-Exemple : 49709
+Exemple : 49709<br>
 → 4 - 9 + 7 - 0 + 9 = 11 → ✔️ divisible par 11
   
 **6. ✅ Crible dynamique avec diviseurs ≤ √n (≥ 13) :**<br>
