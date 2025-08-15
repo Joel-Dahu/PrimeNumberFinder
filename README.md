@@ -38,19 +38,19 @@ Méthode soustractive par 2, les étapes :
 5. Si le résultat final est un multiple de 7 (0, 7, 14, 21, etc. ou leurs opposés négatifs : -7, -14...), alors le nombre d’origine est divisible par 7.
 
 Exemple : 69097  
-- Dernier chiffre = 7 → 7 × 2 = 14  
+→ Dernier chiffre = 7 → 7 × 2 = 14  
 → 6909 - 14 = 6895  
-- Dernier chiffre = 5 → 5 × 2 = 10  
+→ Dernier chiffre = 5 → 5 × 2 = 10  
 → 689 - 10 = 679  
-- Dernier chiffre = 9 → 9 × 2 = 18  
+→ Dernier chiffre = 9 → 9 × 2 = 18  
 → 67 - 18 = 49 ✅  est un multiple de 7 (7 × 7), donc 69097 est divisible par 7 ✔️
 
 Exemple : 49
-- Dernier chiffre = 9 → 9 × 2 = 18  
+→ Dernier chiffre = 9 → 9 × 2 = 18  
 → 4 - 18 = -14 → également divisible par 7 ✔️
 
 Autre exemple : 217
-- Dernier chiffre = 7 → 7 × 2 = 14<br>
+→ Dernier chiffre = 7 → 7 × 2 = 14<br>
 → 21 - 14 = 7 → également divisible par 7 ✔️
 
 **5. ✅ Élimination des multiples de 11 (sauf 11 lui-même) :**<br>
