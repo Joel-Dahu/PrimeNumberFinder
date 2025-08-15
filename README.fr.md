@@ -6,7 +6,7 @@ Cette méthode ne propose rien de nouveau, elle s’appuie sur des principes bie
 **Objectif :**
 Dresser une liste de nombres premiers à partir d’un nombre quelconque supérieur à 2, en filtrant les faux positifs. Il s’agit d’une méthode structurée, simple et optimisée, qui permet d’identifier les nombres premiers avec une fiabilité de 100 %, à condition de suivre rigoureusement toutes les étapes.
 
-**Méthode utilisée : Forme 6n ± 1** 
+**Méthode utilisée : Forme 6n ± 1**
 - Aucun nombre premier ne sera omis, car tous les nombres premiers supérieurs à 3 sont nécessairement de la forme 6n ± 1.  
 - Cette méthode inclut donc tous les candidats potentiels, bien que certains soient des faux positifs à éliminer par filtrage.
 
@@ -37,7 +37,7 @@ Méthode soustractive par 2, les étapes :
 4. Répéter les étapes avec le nouveau nombre obtenu.  
 5. Si le résultat final est un multiple de 7 (0, 7, 14, 21, etc. ou leurs opposés négatifs : -7, -14...), alors le nombre d’origine est divisible par 7.
 
-Exemple : 69097<br> 
+Exemple : 69097<br>
 → Dernier chiffre = 7 → 7 × 2 = 14  
 → 6909 - 14 = 6895  
 → Dernier chiffre = 5 → 5 × 2 = 10  
@@ -56,7 +56,7 @@ Autre exemple : 217<br>
 **5. ✅ Élimination des multiples de 11 (sauf 11 lui-même) :**<br>
 Méthode : somme alternée des chiffres (signes - et +). Un nombre est divisible par 11 si la somme alternée de ses chiffres, en appliquant alternativement - et +, donne un résultat égal à 0 ou à un multiple de 11 (positif ou négatif). Il faut toujours commencer par le signe négatif de gauche à droite. Cette règle permet d’identifier rapidement si un nombre est divisible par 11, sans division.
 
-Exemple : 209<br> 
+Exemple : 209<br>
 → 2 - 0 + 9 = 11 → ✔️ divisible par 11
 
 Exemple : 1694<br>
@@ -139,7 +139,7 @@ Deux cas de succès :
 - Si le résultat final est 0 (méthode 1), le nombre est divisible par 17. ✔️  
 - Si le résultat atteint ±17, ±34, ±51, …, (méthode 2), le nombre est aussi divisible par 17. ✔️
 
-Méthode 1 – Avec 21063 :<br> 
+Méthode 1 – Avec 21063 :<br>
 → 3×5 = 15 → 2106 − 15 = 2091  
 → 1×5 = 5 → 209 − 5 = 204  
 → 4×5 = 20 → 20 − 20 = 0 ⇒ divisible par 17 ✔️

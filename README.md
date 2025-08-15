@@ -1,11 +1,12 @@
 **GENERATE A LIST OF PRIME NUMBERS AND ELIMINATE FALSE POSITIVES**
-&nbsp;<br>  
+
+&nbsp;<br>
 This method introduces nothing new; it relies on well-known principles (notably the 6n - 1 and 6n + 1 forms), combined with a filtering system to eliminate false positives. It is structured with a focus on calculation optimization.
 
 **Objective:**
 Generate a list of prime numbers starting from any number greater than 2, while filtering out false positives. This is a structured, simple, and optimized method that identifies prime numbers with 100% reliability—provided all steps are rigorously followed.
 
-**Method used: Form 6n ± 1** 
+**Method used: Form 6n ± 1**
 - No prime number will be missed, as all prime numbers greater than 3 must be of the form 6n ± 1.  
 - This method therefore includes all potential candidates, although some will be false positives to be filtered out.
 
@@ -13,22 +14,22 @@ Generate a list of prime numbers starting from any number greater than 2, while 
 **I - FILTERS USED (order to respect):**<br>
 Based on progressive filtering of all integers to exclude false positives, aiming to optimize operations (time saving).
 
-**1. ✅ Elimination of all even numbers (except 2):**<br>  
-All numbers ending with 0, 2, 4, 6, 8 are even, thus not prime, except 2 itself. This concerns all multiples of 2: 4, 6, 8, 10, 12, 14, etc.<br>  
+**1. ✅ Elimination of all even numbers (except 2):**<br>
+All numbers ending with 0, 2, 4, 6, 8 are even, thus not prime, except 2 itself. This concerns all multiples of 2: 4, 6, 8, 10, 12, 14, etc.<br>
 Note: Only odd numbers are kept, i.e., those ending with 1, 3, 5, 7, 9.
 
-**2. ✅ Elimination of multiples of 3 (except 3):**<br>  
+**2. ✅ Elimination of multiples of 3 (except 3):**<br>
 Any number whose sum of digits is a multiple of 3 (e.g., 3, 6, 9, 21, etc.) is itself divisible by 3, thus not prime.
 
-Example: 6921<br>  
-6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible by 3, therefore not prime ❌<br>  
+Example: 6921<br>
+6 + 9 + 2 + 1 = 18 → 1 + 8 = 9 → divisible by 3, therefore not prime ❌<br>
 Note: This filter applies regardless of the number of digits.
 
-**3. ✅ Elimination of multiples of 5 (except 5):**<br>  
-All numbers ending with 5 or 0, starting from 10, are multiples of 5 and therefore not prime, except 5 itself.<br>  
+**3. ✅ Elimination of multiples of 5 (except 5):**<br>
+All numbers ending with 5 or 0, starting from 10, are multiples of 5 and therefore not prime, except 5 itself.<br>
 Note: Remaining odd numbers ending with 1, 3, 7, 9 are kept, except 5.
 
-**4. ✅ Elimination of multiples of 7 (except 7 itself):**<br>  
+**4. ✅ Elimination of multiples of 7 (except 7 itself):**<br>
 Subtractive method by 2, steps:  
 1. Take the last digit of the number (units digit).  
 2. Multiply it by 2.
@@ -36,7 +37,7 @@ Subtractive method by 2, steps:
 4. Repeat the steps with the new number obtained.  
 5. If the final result is a multiple of 7 (0, 7, 14, 21, etc. or their negative opposites: -7, -14...), then the original number is divisible by 7.
 
-Example: 69097<br>  
+Example: 69097<br>
 → Last digit = 7 → 7 × 2 = 14  
 → 6909 - 14 = 6895  
 → Last digit = 5 → 5 × 2 = 10  
@@ -44,27 +45,27 @@ Example: 69097<br>
 → Last digit = 9 → 9 × 2 = 18  
 → 67 - 18 = 49 ✅ is a multiple of 7 (7 × 7), so 69097 is divisible by 7 ✔️
 
-Example: 49<br>  
+Example: 49<br>
 → Last digit = 9 → 9 × 2 = 18  
 → 4 - 18 = -14 → also divisible by 7 ✔️
 
-Another example: 217<br>  
-→ Last digit = 7 → 7 × 2 = 14<br>  
+Another example: 217<br>
+→ Last digit = 7 → 7 × 2 = 14<br>
 → 21 - 14 = 7 → also divisible by 7 ✔️
 
-**5. ✅ Elimination of multiples of 11 (except 11 itself):**<br>  
+**5. ✅ Elimination of multiples of 11 (except 11 itself):**<br>
 Method: alternating sum of digits (signs - and +). A number is divisible by 11 if the alternating sum of its digits, applying - and + alternately, results in 0 or a multiple of 11 (positive or negative). Always start with the negative sign from left to right. This rule quickly identifies whether a number is divisible by 11 without performing division.
 
-Example: 209<br>  
+Example: 209<br>
 → 2 - 0 + 9 = 11 → ✔️ divisible by 11
 
-Example: 1694<br>  
+Example: 1694<br>
 → 1 - 6 + 9 - 4 = 0 → ✔️ divisible by 11
 
-Example: 49709<br>  
+Example: 49709<br>
 → 4 - 9 + 7 - 0 + 9 = 11 → ✔️ divisible by 11
   
-**6. ✅ Dynamic sieve with divisors ≤ √n (≥ 13):**<br>  
+**6. ✅ Dynamic sieve with divisors ≤ √n (≥ 13):**<br>
 After the previous filters (2, 3, 5, 7, 11), a dynamic sieve is applied by testing the divisibility of the number by small prime numbers ≥ 13, up to √n.  
 This is neither a Sieve of Eratosthenes nor a probabilistic test, but an optimized, simple, and reliable trial division method for moderately sized numbers.
 
@@ -117,15 +118,15 @@ Therefore, applying them upfront is unnecessary, as their addition:
 3. Add it to the rest of the number (without the last digit).  
 4. Repeat until obtaining an obvious multiple of 13 (13, 26, 39, …).
 
-Examples:<br>  
+Examples:<br>
 With 143: 3×4 = 12 → 14 + 12 = 26 ⇒ divisible by 13 ✔️<br>
 
-With 2197: 7×4 = 28 → 219 + 28 = 247<br>  
-→ 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 or 13 × 4), so 2197 is divisible by 13 ✔️<br>  
+With 2197: 7×4 = 28 → 219 + 28 = 247<br>
+→ 7×4 = 28 → 24 + 28 = 52 ⇒ (52 = 26 × 2 or 13 × 4), so 2197 is divisible by 13 ✔️<br>
 → 2×4 = 8 → 5 + 8 = 13 ⇒ (13 = 13 × 1), so 2197 is divisible by 13 ✔️
 
-With 7007: 7×4 = 28 → 700 + 28 = 728<br>  
-→ 8×4 = 32 → 72 + 32 = 104<br>  
+With 7007: 7×4 = 28 → 700 + 28 = 728<br>
+→ 8×4 = 32 → 72 + 32 = 104<br>
 → 4×4 = 16 → 10 + 16 = 26 ⇒ (26 = 13 × 2), so 7007 is divisible by 13 ✔️
 
 ➤ **Multiple of 17 (×5, subtractive method) - Principle:**
@@ -138,12 +139,12 @@ Two success cases:
 - If the final result is 0 (method 1), the number is divisible by 17. ✔️  
 - If the result reaches ±17, ±34, ±51, … (method 2), the number is also divisible by 17. ✔️
 
-Method 1 – With 21063:<br>  
+Method 1 – With 21063:<br>
 → 3×5 = 15 → 2106 − 15 = 2091  
 → 1×5 = 5 → 209 − 5 = 204  
 → 4×5 = 20 → 20 − 20 = 0 ⇒ divisible by 17 ✔️
 
-Method 2 – With 21199:<br>  
+Method 2 – With 21199:<br>
 → 9×5 = 45 → 2119 − 45 = 2074  
 → 4×5 = 20 → 207 − 20 = 187  
 → 7×5 = 35 → 18 − 35 = −17 ⇒ Remainder ≠ 0, but -17 (17 x -1) is divisible by 17 ✔️
@@ -180,7 +181,7 @@ Example: 110523
 Please note a specific feature in the file (***Main_Prime_Number_Test.java***) regarding prime number testing.  
 To avoid unnecessary calculations on numbers that cannot mathematically be prime—and for better performance when using direct tests like (n±1)/6—this filter has been added.
 
-✅ **Form Filter for Direct Testing (n±1)/6:**<br>  
+✅ **Form Filter for Direct Testing (n±1)/6:**<br>
 Usage: Only in individual prime number tests.  
 Principle: Every prime number > 3 follows the form 6k ± 1.<br>
 Method: For an integer n > 3, check:<br>
