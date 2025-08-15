@@ -10,7 +10,7 @@ Generate a list of prime numbers starting from any number greater than 2, while 
 - This method therefore includes all potential candidates, although some will be false positives to be filtered out.
 
 &nbsp;<br>
-**I - FILTERS USED (order to respect):**<br>  
+**I - FILTERS USED (order to respect):**<br>
 Based on progressive filtering of all integers to exclude false positives, aiming to optimize operations (time saving).
 
 **1. ✅ Elimination of all even numbers (except 2):**<br>  
@@ -78,7 +78,7 @@ Efficiency:
 - Beyond 10¹², performance drops sharply because √n becomes too large → the number of divisions explodes.
 
 &nbsp;<br>
-**II - PERFORMANCE ESTIMATION (1M to 10M) - Context:**<br>  
+**II - PERFORMANCE ESTIMATION (1M to 10M) - Context:**<br>
 In JAVA code: The long type can store integers from -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807 (about ±9.2 × 10¹⁸). The dynamic sieve works with long up to 9 × 10¹⁸, but computation time increases sharply beyond 10⁹ to 10¹².
 
 Generating all prime numbers from 1,000,000 to 10,000,000 (i.e. 9 million numbers to test) with filters + dynamic sieve on a standard computer (Intel i5, 4 to 8 GB RAM). Steps:  
@@ -101,7 +101,7 @@ Best practices:
 - Properly manage synchronization and avoid deadlocks or CPU overload.
 
 &nbsp;<br>
-**III - REMARK ON UNUSED FILTERS (e.g., 13, 17, 19, …):**<br>  
+**III - REMARK ON UNUSED FILTERS (e.g., 13, 17, 19, …):**<br>
 These filters are not applied because they do not provide a significant performance gain.  
 - Their rules are more complex or less intuitive.  
 - Their detection frequency (multiples encountered) is relatively lower.  
@@ -176,7 +176,7 @@ Example: 110523
 - This method is fast and reliable for manual or algorithmic checks.
 
 &nbsp;<br>
-**IV - TEST IF A NUMBER IS PRIME:**<br>  
+**IV - TEST IF A NUMBER IS PRIME:**<br>
 Please note a specific feature in the file (***Main_Prime_Number_Test.java***) regarding prime number testing.  
 To avoid unnecessary calculations on numbers that cannot mathematically be prime—and for better performance when using direct tests like (n±1)/6—this filter has been added.
 
