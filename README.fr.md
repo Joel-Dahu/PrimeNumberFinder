@@ -182,7 +182,7 @@ Veuillez noter une particularité pour le test d’un nombre premier dans le fic
 Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, ce filtre a été ajouté.
 
 ✅ **Filtre de forme pour test direct (n±1)/6 :**<br>
-Utilisation : Uniquement dans les tests de primalité d’un nombre.
+Uniquement dans les tests de primalité d’un nombre.
 Principe : Tout nombre premier > 3 est de la forme 6k ± 1.<br>
 Méthode, pour un entier n > 3, on vérifie :<br>
 → (n − 1)/6<br>
