@@ -238,3 +238,24 @@ En complément - Ce que ce n’est pas, même si elle y ressemble parfois :
 - Crible d’Atkin : Plus moderne et plus rapide qu'Ératosthène pour de très grands n.
 - Crible quadratique / algébrique : Algorithmes avancés de factorisation, pas de simple test.
 - Crible de Sundaram : Autre méthode de génération des petits nombres premiers.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+<table>
+  <tr>
+    <td align="center">
+      <b>LISTE DE NOMBRES PREMIERS</b>
+    </td>
+    <td align="center">
+      <b>UN NOMBRE EST PREMIER</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Schema_Logique_Prime_Numbers_List.jpg" width="512"/><br>
+    </td>
+    <td align="center">
+      <img src="Schema_Logique_Test_Number.jpg" width="512"/><br>
+    </td>
+  </tr>
+</table>
