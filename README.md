@@ -74,7 +74,7 @@ Objectifs :
 - ✅ Ne manquer aucun nombre premier.
 
 Efficacité :
-- Rapide et efficace pour des entiers jusqu’à 10⁶ à 10⁷, voire jusqu’à ~10¹⁰ avec les filtres précédents.
+- Rapide et efficace pour des entiers jusqu’à 10⁶ à 10⁷, voire à ~10¹⁰ avec les filtres précédents.
 - Pour tester un seul nombre, cela peut fonctionner jusqu’à 10¹², voire 10¹⁴ selon les cas.
 - Au-delà de 10¹², les performances chutent fortement car √n devient trop grand → le nombre de divisions explose.
 
@@ -91,10 +91,10 @@ Temps estimé par test complet (filtres + divisions) :
 - 900 000 × 1 ms (en moyenne) = 900 000 ms = 900 sec ≈ 15 minutes
 - Intervalle réaliste : 10 à 15 minutes sur un i5 pour balayer tout l’intervalle avec cette méthode.
 
-Astuce d’optimisation Java avec multi-thread (CPU multicœurs), avec un processeur à 8 cœurs :
+Astuce d’optimisation JAVA avec multi-thread (CPU multicœurs), avec un processeur à 8 cœurs :
 - Diviser la plage [1 000 000 → 10 000 000] en 8 sous-intervalles équitables.
 - Lancer 8 threads parallèles, chacun chargé de tester les nombres premiers dans sa portion.
-- Résultat attendu : jusqu’à 8× plus rapide dans l’idéal. En pratique, on atteint ≈ 6 à 7× de gain selon la gestion des threads et des ressources.
+- Résultat attendu : Jusqu’à 8× plus rapide dans l’idéal. En pratique, on atteint ≈ 6 à 7× de gain selon la gestion des threads et des ressources.
 
 Bonnes pratiques :
 - Utiliser des structures thread-safe pour collecter les résultats (ex : ConcurrentLinkedQueue, CopyOnWriteArrayList).
@@ -160,14 +160,14 @@ Conclusion :
 4. Répéter jusqu’à obtenir un nombre facile à tester.
 Si le résultat est un multiple de 19 (19, 38, 57, …), alors le nombre initial est divisible par 19.
 
-Exemple 1 - 133 :<br>
+Exemple : 133<br>
 → 3×2 = 6 → 13 + 6 = 19 ⇒ divisible par 19 ✔️
 
-Exemple 2 - 361 :<br>
+Exemple : 361<br>
 → 1×2 = 2 → 36 + 2 = 38 ⇒ divisible par 19 ✔️  
 → 8×2 = 16 → 3 + 16 = 19 ⇒ divisible par 19 ✔️
 
-Exemple 3 – 110523 :<br>
+Exemple : 110523<br>
 → 3×2 = 6 → 11052 + 6 = 11058  
 → 8×2 = 16 → 1105 + 16 = 1121  
 → 1×2 = 2 → 112 + 2 = 114  
@@ -178,14 +178,14 @@ Exemple 3 – 110523 :<br>
 
 &nbsp;<br>
 **IV - TESTEZ SI UN NOMBRE EST PREMIER :**<br>
-Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (***Main_Prime_Number_Test.java***) :
-Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, un filtre a été ajouté.
+Veuillez noter une particularité pour le test d’un nombre premier dans le fichier (***Main_Prime_Number_Test.java***).
+Afin d’éviter des calculs inutiles pour des nombres qui ne peuvent mathématiquement pas être premiers et pour un gain de performance dans les tests directs (n±1)/6, ce filtre a été ajouté.
 
-✅ **Filtre de forme pour test direct (n±1)/6 :**
+✅ **Filtre de forme pour test direct (n±1)/6 :**<br>
 Utilisation : Uniquement dans les tests de primalité d’un nombre.
-Principe : Tout nombre premier > 3 est de la forme 6k ± 1.
-Méthode, pour un entier n > 3, on vérifie :
-→ (n − 1)/6
+Principe : Tout nombre premier > 3 est de la forme 6k ± 1.<br>
+Méthode, pour un entier n > 3, on vérifie :<br>
+→ (n − 1)/6<br>
 → (n + 1)/6
 
 Si aucun des deux résultats n’est un entier, alors n ne peut pas être premier.
@@ -193,16 +193,15 @@ Sinon, il est potentiellement premier et doit être vérifié par le crible dyna
 
 Exemple : n = 291167
   - (291167 − 1)/6 = 291166/6 = 48527.666 ❌
-  - (291167 + 1)/6 = 291168/6 = 48528 ✅
-  → Le test est validé ⇒ n peut être premier ou faux positif.
+  - (291167 + 1)/6 = 291168/6 = 48528 ✅ → Le test est validé ⇒ n peut être premier ou faux positif.
 
 Si n passe ce filtre, alors il est potentiellement premier, ou bien un faux positif (ex : 119 ou 133). Il faut donc poursuivre la vérification avec le crible dynamique (diviseurs ≤ √n) pour confirmer ou infirmer sa primalité.
 
 &nbsp;<br>
 **V - MISE EN OEUVRE ET UTILISATION – Voir les fichiers :**<br>
-GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
+- GENERER UNE LISTE DE NOMBRES PREMIERS (entre un début et une fin donnée) ET ELIMINATION DES FAUX POSITIFS : ***Main_List_Of_Prime_Number.java***
 
-TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***
+- TESTEZ SI UN NOMBRE EST PREMIER - TEST IF A NUMBER IS PRIME : ***Main_Prime_Number_Test.java***<br>
 Pour information avec Intel Core i5 -1135G7, le traitement de ce nombre peut prendre entre 2 à 10 secondes : 9223372036854775907 (Nombre premier).
 
 &nbsp;<br>
@@ -215,8 +214,7 @@ Pour des très grands nombres (≥ 10¹²), il est recommandé d’utiliser :
 - Miller-Rabin (test probabiliste rapide et fiable pour la plupart des usages).
 - En « BigInteger » ou des algos de type AKS, Baillie–PSW, etc. (plus complexes, mais déterministes). Pour ce type de nombres, il faut des algorithmes spécialisés et une infrastructure très puissante (comme GIMPS + GPU NVIDIA H100).
 
-Limite de temps et complexité :
-Par exemple pour traiter un nombre de 41 024 320 chiffres décimaux (M₁₃₆₂₇₉₈₄₁ = 2¹³⁶²⁷⁹⁸⁴¹ − 1). Le plus grand connu à ce jour et qui appartient à la famille des nombres premiers de Mersenne, de la forme Mₚ = 2ᵖ − 1, découvert par Luke Durant, le 21 octobre 2024, via le projet GIMPS (Great Internet Mersenne Prime Search), avec l'aide d’un GPU NVIDIA H100.
+Limite de temps et complexité : Pour traiter un nombre de 41 024 320 chiffres décimaux (M₁₃₆₂₇₉₈₄₁ = 2¹³⁶²⁷⁹⁸⁴¹ − 1). Le plus grand connu à ce jour et qui appartient à la famille des nombres premiers de Mersenne, de la forme Mₚ = 2ᵖ − 1, découvert par Luke Durant, le 21 octobre 2024, via le projet GIMPS (Great Internet Mersenne Prime Search), avec l'aide d’un GPU NVIDIA H100.
 Un exploit mathématique et informatique et pour donner une idée : Pour imprimer ce nombre sur papier A4 avec police standard, il faudrait plus de 10 000 pages !
 
 Tester un nombre avec plus de 40 millions de chiffres impliquerait de faire un crible avec tous les diviseurs possibles jusqu’à sa racine carrée. Ce qui représente environ 10²⁰⁶⁰¹⁵⁹ tests. C’est infiniment lent, même avec des supercalculateurs.
@@ -228,9 +226,9 @@ Tests de primalité avancés requis :
 - Ces algos sont beaucoup plus rapides pour ces cas extrêmes, mais ne garantissent pas à 100% la primalité (sauf certaines conditions).
 - Division euclidienne, base de l’arithmétique, mais pas un test de primalité.
 
-En complément - Ce que ce n’est pas, même si elle y ressemble parfois :
+En complément - Ce que ce n’est pas, même si cela y ressemble parfois :
 - Crible d'Ératosthène : Méthode pour générer tous les nombres premiers jusqu’à un certain n (élimine les multiples).
-- Crible d’Atkin : Plus moderne et plus rapide qu'Ératosthène pour de très grands n.
+- Crible d’Atkin : Plus moderne et plus rapide qu'Ératosthène pour de très grands nombres.
 - Crible quadratique / algébrique : Algorithmes avancés de factorisation, pas de simple test.
 - Crible de Sundaram : Autre méthode de génération des petits nombres premiers.
 
@@ -242,7 +240,7 @@ En complément - Ce que ce n’est pas, même si elle y ressemble parfois :
       <b>LISTE DE NOMBRES PREMIERS</b>
     </td>
     <td align="center">
-      <b>UN NOMBRE EST PREMIER</b>
+      <b>CE NOMBRE EST-IL PREMIER ?</b>
     </td>
   </tr>
   <tr>
