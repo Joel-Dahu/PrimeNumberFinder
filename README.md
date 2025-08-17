@@ -200,9 +200,9 @@ Therefore, the dynamic sieve (divisors ≤ √n) must be applied to confirm or r
 
 &nbsp;<br>
 **V - IMPLEMENTATION AND USAGE – See files below:**<br>
-- **GENERATE A LIST OF PRIME NUMBERS** (between a given start and end value) **AND ELIMINATE FALSE POSITIVES:** ***Main_List_Of_Prime_Number.java***
+- **GENERATE A LIST OF PRIME NUMBERS** (between a given start and end value) **AND ELIMINATE FALSE POSITIVES (JAVA 8+):** ***Main_List_Of_Prime_Number.java***
 
-- **TEST IF A NUMBER IS PRIME:** ***Main_Prime_Number_Test.java***<br>
+- **TEST IF A NUMBER IS PRIME (JAVA 8+):** ***Main_Prime_Number_Test.java***<br>
 For reference, using an Intel Core i5-1135G7, processing the following number may take between 2 to 10 seconds: 9223372036854775907 (Prime number).
 
 &nbsp;<br>
