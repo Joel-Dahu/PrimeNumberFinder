@@ -70,8 +70,8 @@ public class Main {
 		
 		// Exemple avec - Example with : n = 3; à/to n_stop = 17;
         long n = 3; // >2
-		long n_stop = 17;
-        // Résultat - Result : 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 
+		long n_stop = 103;
+        // Résultat - Result : 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, etc ...
 
         // Exemple avec - Example with : n = 312345678901200L; à n_stop = 312345678901301L;
         //long n = 312345678901200L; // >2
